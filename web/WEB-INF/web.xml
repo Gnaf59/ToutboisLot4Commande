@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>Identification</servlet-name>
+        <servlet-class>fr.gauthier_matthieu.servlets.Identification</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Identification</servlet-name>
+        <url-pattern>/Identification</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>/WEB-INF/index.jsp</welcome-file>
+    </welcome-file-list>
+    <jsp-config>
+        <jsp-property-group>
+            <display-name>Header_Footer</display-name>
+            <url-pattern>/WEB-INF/Accueil.jsp</url-pattern>
+            <include-prelude>/WEB-INF/Head.jsp</include-prelude>
+            <include-coda>/WEB-INF/Footer.jsp</include-coda>
+        </jsp-property-group>
+    </jsp-config>
+</web-app>
