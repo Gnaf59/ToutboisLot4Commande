@@ -5,22 +5,66 @@
  */
 package fr.gauthier_matthieu.beans;
 
+import javax.persistence.*;
+
 /**
  *
  * @author Matthieu
  */
+@Entity
+@Table(name="produit")
 public class Produit {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="codeProduit")
     private int codeProduit;
+    @Column(name="libelleProduit")
     private String libelleProduit;
+    @Column(name="stockProduit")
     private int stock;
+    @Column(name="prixUnitaireProduit")
     private Double prixProduit;
+    @Column(name="remiseProduit")
     private Float remiseProduit;
+    @Column(name="description")
     private String descriptionProduit;
+    @Column(name="Image")
     private String lienImageProduit;
+    @Column(name="id_TVA")
     private int tvaProduit;
+    @Column(name="Id_typeProduit")
     private int typeProduit;
+    @OneToMany
+    private Fournisseur fournisseur;
 
+    public Produit() {
+        super();
+    }
+
+    public Produit(int codeProduit, String libelleProduit, int stock, 
+            Double prixProduit, Float remiseProduit, String descriptionProduit,
+            String lienImageProduit, int tvaProduit, int typeProduit, 
+            Fournisseur fournisseur) {
+        
+        
+        this.codeProduit = codeProduit;
+        this.libelleProduit = libelleProduit;
+        this.stock = stock;
+        this.prixProduit = prixProduit;
+        this.remiseProduit = remiseProduit;
+        this.descriptionProduit = descriptionProduit;
+        this.lienImageProduit = lienImageProduit;
+        this.tvaProduit = tvaProduit;
+        this.typeProduit = typeProduit;
+        this.fournisseur = fournisseur;
+    }
+    
+    
+    
+    
+    
+    
     public int getCodeProduit() {
         return codeProduit;
     }

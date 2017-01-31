@@ -18,6 +18,13 @@
 	<property name="use_sql_comments">true</property>
         <property name="hbm2ddl.auto">update</property>
         
+        <!--  Mapping Objets -->
+        <mapping class="fr.gauthier_matthieu.beans.Produits"/>
+        <mapping class="fr.gauthier_matthieu.beans.Commande"/>
+        <mapping class="fr.gauthier_matthieu.beans.LigneCommande"/>
+        <mapping class="fr.gauthier_matthieu.beans.Fournisseur"/>
+        
+        
         
     </session-factory>
 </hibernate-configuration>
