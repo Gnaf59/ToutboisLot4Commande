@@ -5,43 +5,39 @@
  */
 package fr.gauthier_matthieu.beans;
 
+import java.io.Serializable;
+import javax.persistence.*;
+
 /**
  *
- * @author Matthieu
+ * @author Matthieu, Gauthier
  */
-public class LigneCommande {
 
+@Entity
+@Table (name="contenir")
+public class LigneCommande implements Serializable {
+    
+    @Id
+    @ManyToOne
+    @JoinColumn(name = "codeProduit_contenir")
     private Produit produit;
+    
+    @Column( name="quantite")
     private int quantite;
 
-    public Produit getProduit() {
-        return produit;
-    }
-
-    public void setProduit(Produit produit) {
-        this.produit = produit;
-    }
-
-    public int getQuantite() {
-        return quantite;
-    }
-
-    public void setQuantite(int quantite) {
-        this.quantite = quantite;
-    }
 
     public double calculTva() {
-        return produit.getTvaProduit() *getQuantite() *produit.getPrixProduit() / 100;
+        return produit.getTvaProduit() *quantite *produit.getPrixProduit() / 100;
 
     }
 
     public double calculTotalCommandeTTC() {
-        return produit.getPrixProduit() * getQuantite() * (1 + (produit.getTvaProduit() / 100));
+        return produit.getPrixProduit() * quantite * (1 + (produit.getTvaProduit() / 100));
 
     }
 
     public double calculTotalCommandeHT() {
-        return produit.getPrixProduit()*getQuantite();
+        return produit.getPrixProduit()*quantite;
     }
 
 }

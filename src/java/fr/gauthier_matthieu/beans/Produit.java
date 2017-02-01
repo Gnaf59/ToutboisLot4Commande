@@ -5,20 +5,44 @@
  */
 package fr.gauthier_matthieu.beans;
 
+import javax.persistence.*;
+
 /**
  *
  * @author Matthieu
  */
+
+@Entity
+@Table (name="produit")
 public class Produit {
 
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column( name="codeProduit")
     private int codeProduit;
+    
+    @Column( name="libelleProduit")
     private String libelleProduit;
+    
+    @Column( name="quantite")
     private int stock;
+    
+    @Column( name="prixProduit")
     private Double prixProduit;
+    
+    @Column( name="remiseProduit")
     private Float remiseProduit;
+    
+    @Column( name="descriptionProduit")
     private String descriptionProduit;
+    
+    @Column( name="lienImageProduit")
     private String lienImageProduit;
+    
+    @Column( name="tvaProduit")
     private int tvaProduit;
+    
+    @Column( name="typeProduit")
     private int typeProduit;
 
     public int getCodeProduit() {

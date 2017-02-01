@@ -5,129 +5,63 @@
  */
 package fr.gauthier_matthieu.beans;
 
+
+import javax.persistence.*;
+
 /**
  *
  * @author Matthieu, Gauthier
  */
-public class Fournisseur {
 
+@Entity
+@Table (name= "fournisseur")
+public class Fournisseur {
+    
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column( name="idFournisseur")
     private int idFournisseur;
+    
+    @Column( name="nomEntrepriseFournisseur")
     private String nomEntreprise;
+    
+    @Column( name="siretFournisseur")
     private String siretFournisseur;
+    
+    @Column( name="nomContactFournisseur")
     private String nomContact;
+    
+    @Column( name="prenomContactFournisseur")
     private String prenomContact;
+    
+    @Column( name="numVoieFournisseur")
     private int numVoieFournisseur;
+    
+    @Column( name="adresseFournisseur")
     private String adresseFournisseur;
+    
+    @Column( name="complementAdresseFournisseur")
     private String complementAdresseFournisseur;
+    
+    @Column( name="villeFournisseur")
     private String villeFournisseur;
+    
+    @Column( name="mailFournisseur")
     private String mailFournisseur;
+    
+    @Column( name="numeroTelephoneFournisseur")
     private String numeroTelephone;
+    
+    @Column( name="paysFournisseur")
     private String paysFournisseur;
+    
+    @Column( name="codePostalFournisseur")
     private String codePostalFournisseur;
 
-    public String getNomEntreprise() {
+    @Override
+    public String toString()
+    {
         return nomEntreprise;
     }
-
-    public void setNomEntreprise(String nomEntreprise) {
-        this.nomEntreprise = nomEntreprise;
-    }
-
-    public String getSiretFournisseur() {
-        return siretFournisseur;
-    }
-
-    public void setSiretFournisseur(String siretFournisseur) {
-        this.siretFournisseur = siretFournisseur;
-    }
-
-    public String getNomContact() {
-        return nomContact;
-    }
-
-    public void setNomContact(String nomContact) {
-        this.nomContact = nomContact;
-    }
-
-    public String getPrenomContact() {
-        return prenomContact;
-    }
-
-    public void setPrenomContact(String prenomContact) {
-        this.prenomContact = prenomContact;
-    }
-
-    public int getNumVoieFournisseur() {
-        return numVoieFournisseur;
-    }
-
-    public void setNumVoieFournisseur(int numVoieFournisseur) {
-        this.numVoieFournisseur = numVoieFournisseur;
-    }
-
-    public String getAdresseFournisseur() {
-        return adresseFournisseur;
-    }
-
-    public void setAdresseFournisseur(String adresseFournisseur) {
-        this.adresseFournisseur = adresseFournisseur;
-    }
-
-    public String getComplementAdresseFournisseur() {
-        return complementAdresseFournisseur;
-    }
-
-    public void setComplementAdresseFournisseur(String complementAdresseFournisseur) {
-        this.complementAdresseFournisseur = complementAdresseFournisseur;
-    }
-
-    public String getVilleFournisseur() {
-        return villeFournisseur;
-    }
-
-    public void setVilleFournisseur(String villeFournisseur) {
-        this.villeFournisseur = villeFournisseur;
-    }
-
-    public String getMailFournisseur() {
-        return mailFournisseur;
-    }
-
-    public void setMailFournisseur(String mailFournisseur) {
-        this.mailFournisseur = mailFournisseur;
-    }
-
-    public String getNumeroTelephone() {
-        return numeroTelephone;
-    }
-
-    public void setNumeroTelephone(String numeroTelephone) {
-        this.numeroTelephone = numeroTelephone;
-    }
-
-    public String getPaysFournisseur() {
-        return paysFournisseur;
-    }
-
-    public void setPaysFournisseur(String paysFournisseur) {
-        this.paysFournisseur = paysFournisseur;
-    }
-
-    public String getCodePostalFournisseur() {
-        return codePostalFournisseur;
-    }
-
-    public void setCodePostalFournisseur(String codePostalFournisseur) {
-        this.codePostalFournisseur = codePostalFournisseur;
-    }
-
-    public int getIdFournisseur() {
-        return idFournisseur;
-    }
-
-    public void setIdFournisseur(int idFournisseur) {
-        this.idFournisseur = idFournisseur;
-    }
-    
-    
+   
 }

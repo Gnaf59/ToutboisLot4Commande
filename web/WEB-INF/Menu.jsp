@@ -19,7 +19,7 @@
                     <li><a>Nouvelle commande</a></li>
                     <li><a>Modifier commande</a></li>
                     <li><a>Supprimer commande</a></li>
-                    <li><a>Liste commandes</a></li>
+                    <li><a href="ListeCommande">Liste commandes</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div><!--/.container -->

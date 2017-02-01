@@ -5,10 +5,11 @@
  */
 package fr.gauthier_matthieu.beans;
 
-
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.*;
 
 
 
@@ -16,66 +17,34 @@ import java.time.format.DateTimeFormatter;
  *
  * @author Matthieu
  */
+@Entity
+@Table (name="commande")
 public class Commande{
     
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column( name="id_commande")
     private int id_commande;
+    
+    @Column( name="dateCommande")
     private LocalDateTime dateCommande;
+    
+    @Column( name="dateLivraisonCommande")
     private LocalDateTime dateLivraisonCommande;
-    private String etatCommande;    
-    private  LigneCommande ligneCommande;
+    
+    @Column( name="etatCommande")
+    private String etatCommande; 
+    
+    @OneToMany
+    private Set<LigneCommande> ligneCommande = new HashSet<>();
+    
+    @ManyToOne @JoinColumn(name="idFournisseur", unique=true)
     private Fournisseur fournisseur;
     
     
     
     
 
-    public Fournisseur getFournisseur() {
-        return fournisseur;
-    }
-
-    public void setFournisseur(Fournisseur fournisseur) {
-        this.fournisseur = fournisseur;
-    }
-
-    public int getId_commande() {
-        return id_commande;
-    }
-
-    public LigneCommande getLigneCommande() {
-        return ligneCommande;
-    }
-
-    public void setLigneCommande(LigneCommande ligneCommande) {
-        this.ligneCommande = ligneCommande;
-    }
-
-    public void setId_commande(int id_commande) {
-        this.id_commande = id_commande;
-    }
-
-    public String getEtatCommande() {
-        return etatCommande;
-    }
-
-    public void setEtatCommande(String etatCommande) {
-        this.etatCommande = etatCommande;
-    }
-
-    public LocalDateTime getDateCommande() {
-        return dateCommande;
-    }
-
-    public void setDateCommande(LocalDateTime dateCommande) {
-        this.dateCommande = dateCommande;
-    }
-
-    public LocalDateTime getDateLivraisonCommande() {
-        return dateLivraisonCommande;
-    }
-
-    public void setDateLivraisonCommande(LocalDateTime dateLivraisonCommande) {
-        this.dateLivraisonCommande = dateLivraisonCommande;
-    }
 
     public String getDateCommandeString()
     {

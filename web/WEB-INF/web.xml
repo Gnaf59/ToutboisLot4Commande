@@ -4,9 +4,17 @@
         <servlet-name>Identification</servlet-name>
         <servlet-class>fr.gauthier_matthieu.servlets.Identification</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListeCommande</servlet-name>
+        <servlet-class>fr.gauthier_matthieu.servlets.ListeCommande</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Identification</servlet-name>
         <url-pattern>/Identification</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListeCommande</servlet-name>
+        <url-pattern>/ListeCommande</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>/WEB-INF/index.jsp</welcome-file>
