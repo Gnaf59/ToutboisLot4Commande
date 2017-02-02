@@ -5,6 +5,7 @@
  */
 package fr.gauthier_matthieu.beans;
 
+import java.io.Serializable;
 import javax.persistence.*;
 
 /**
@@ -14,7 +15,7 @@ import javax.persistence.*;
 
 @Entity
 @Table (name="produit")
-public class Produit {
+public class Produit implements Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)

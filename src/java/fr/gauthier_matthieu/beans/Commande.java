@@ -5,6 +5,7 @@
  */
 package fr.gauthier_matthieu.beans;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashSet;
@@ -18,8 +19,8 @@ import javax.persistence.*;
  * @author Matthieu
  */
 @Entity
-@Table (name="commande")
-public class Commande{
+@Table (name="commandes")
+public class Commande implements Serializable{
     
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
