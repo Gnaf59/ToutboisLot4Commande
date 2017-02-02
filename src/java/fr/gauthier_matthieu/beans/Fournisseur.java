@@ -20,7 +20,7 @@ import javax.persistence.*;
 public class Fournisseur implements Serializable {
     
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column( name="idFournisseur")
     private int idFournisseur;
     
@@ -51,7 +51,7 @@ public class Fournisseur implements Serializable {
     @Column( name="mailFournisseur")
     private String mailFournisseur;
     
-    @Column( name="numeroTelephoneFournisseur")
+    @Column( name="numeroTelFournisseur")
     private String numeroTelephoneFournisseur;
     
     @Column( name="paysFournisseur")

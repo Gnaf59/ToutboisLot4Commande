@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package fr.gauthier_matthieu.DAO;
-
 import fr.gauthier_matthieu.beans.Produit;
 import java.util.Set;
 

@@ -15,7 +15,7 @@ import java.util.List;
  */
 public interface CommandeDAO {
     
-    List<Fournisseur>listeCommande();
+    List<Commande>listeCommande();
     void nouvelleCommande();
     
 }

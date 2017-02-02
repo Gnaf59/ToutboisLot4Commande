@@ -5,6 +5,7 @@
  */
 package fr.gauthier_matthieu.DAO;
 
+import fr.gauthier_matthieu.beans.Commande;
 import fr.gauthier_matthieu.beans.Fournisseur;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +22,7 @@ public class CommandeDAOimpl implements CommandeDAO{
     private SessionFactory sessionFactory;
     private Session session;
     private Transaction tx =null;
-    private List<Fournisseur> resultat=new ArrayList<>();
+    private List<Commande> resultat=null;
     
     public CommandeDAOimpl(SessionFactory sessionFactory) {
         this.sessionFactory=sessionFactory;
@@ -30,7 +31,7 @@ public class CommandeDAOimpl implements CommandeDAO{
     
     
     @Override
-    public List<Fournisseur> listeCommande() {
+    public List<Commande> listeCommande() {
         
         
         try
@@ -39,7 +40,7 @@ public class CommandeDAOimpl implements CommandeDAO{
         
             tx=session.beginTransaction();
         
-            resultat=session.createQuery("from Fournisseur").list();
+            resultat=session.createQuery("from Commande").list();
         
             tx.commit();
         }

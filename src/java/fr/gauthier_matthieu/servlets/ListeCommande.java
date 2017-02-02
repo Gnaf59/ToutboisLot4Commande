@@ -46,9 +46,9 @@ public class ListeCommande extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        List<Fournisseur> listeCommande = commandeDAO.listeCommande();
+        List<Commande> listeCommande = commandeDAO.listeCommande();
         
-        for(Fournisseur item : listeCommande){
+        for(Commande item : listeCommande){
 	System.out.println(item.toString());
         }
         

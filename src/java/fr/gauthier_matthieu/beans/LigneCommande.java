@@ -14,12 +14,12 @@ import javax.persistence.*;
  */
 
 @Entity
-@Table (name="contenir")
+@Table (name="lignecommande")
 public class LigneCommande implements Serializable {
     
     @Id
     @ManyToOne
-    @JoinColumn(name = "codeProduit_contenir")
+    @JoinColumn(name = "codeProduitLigneCommande")
     private Produit produit;
     
     @Column( name="quantite")
@@ -27,12 +27,12 @@ public class LigneCommande implements Serializable {
 
 
     public double calculTva() {
-        return produit.getTvaProduit() *quantite *produit.getPrixProduit() / 100;
+        return produit.getTvaProduit().getTauxTVA() *quantite *produit.getPrixProduit() / 100;
 
     }
 
     public double calculTotalCommandeTTC() {
-        return produit.getPrixProduit() * quantite * (1 + (produit.getTvaProduit() / 100));
+        return produit.getPrixProduit() * quantite * (1 + (produit.getTvaProduit().getTauxTVA() / 100));
 
     }
 

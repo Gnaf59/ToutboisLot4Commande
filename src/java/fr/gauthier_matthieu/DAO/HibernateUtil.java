@@ -7,9 +7,7 @@ package fr.gauthier_matthieu.DAO;
 
 import org.hibernate.SessionFactory;
 
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.service.ServiceRegistry;
 
 /**
  *
@@ -26,9 +24,8 @@ public class HibernateUtil {
         
         Configuration conf = new Configuration();
         conf.configure("/fr/gauthier_matthieu/DAO/hibernate.cfg.xml");
-        ServiceRegistry serviceReg = new StandardServiceRegistryBuilder().applySettings(conf.getProperties()).build();
         
-        sessionFactory = conf.buildSessionFactory(serviceReg);
+        sessionFactory = conf.buildSessionFactory();
         
         }
         catch(Throwable ex)

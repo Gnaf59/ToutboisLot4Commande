@@ -23,7 +23,7 @@ import javax.persistence.*;
 public class Commande implements Serializable{
     
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column( name="id_commande")
     private int id_commande;
     

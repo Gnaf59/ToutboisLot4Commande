@@ -18,33 +18,35 @@ import javax.persistence.*;
 public class Produit implements Serializable {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column( name="codeProduit")
     private int codeProduit;
     
     @Column( name="libelleProduit")
     private String libelleProduit;
     
-    @Column( name="quantite")
+    @Column( name="stockProduit")
     private int stock;
     
-    @Column( name="prixProduit")
+    @Column( name="prixUnitaireProduit")
     private Double prixProduit;
     
     @Column( name="remiseProduit")
     private Float remiseProduit;
     
-    @Column( name="descriptionProduit")
+    @Column( name="description")
     private String descriptionProduit;
     
-    @Column( name="lienImageProduit")
+    @Column( name="Image")
     private String lienImageProduit;
     
-    @Column( name="tvaProduit")
-    private int tvaProduit;
+    @ManyToOne
+    @JoinColumn(name = "id_TVA")
+    private TvaProduit tvaProduit;
     
-    @Column( name="typeProduit")
-    private int typeProduit;
+    @ManyToOne
+    @JoinColumn(name = "Id_typeProduit")
+    private TypeProduit typeProduit;
 
     public int getCodeProduit() {
         return codeProduit;
@@ -102,21 +104,24 @@ public class Produit implements Serializable {
         this.lienImageProduit = lienImageProduit;
     }
 
-    public int getTvaProduit() {
+    public TvaProduit getTvaProduit() {
         return tvaProduit;
     }
 
-    public void setTvaProduit(int tvaProduit) {
+    public void setTvaProduit(TvaProduit tvaProduit) {
         this.tvaProduit = tvaProduit;
     }
 
-    public int getTypeProduit() {
+    public TypeProduit getTypeProduit() {
         return typeProduit;
     }
 
-    public void setTypeProduit(int typeProduit) {
+    public void setTypeProduit(TypeProduit typeProduit) {
         this.typeProduit = typeProduit;
     }
+
+   
+    
     
     
 

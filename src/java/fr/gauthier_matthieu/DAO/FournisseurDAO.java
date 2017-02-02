@@ -5,7 +5,6 @@
  */
 package fr.gauthier_matthieu.DAO;
 
-import fr.gauthier_matthieu.beans.Fournisseur;
 import fr.gauthier_matthieu.beans.Produit;
 import java.util.Set;
 
