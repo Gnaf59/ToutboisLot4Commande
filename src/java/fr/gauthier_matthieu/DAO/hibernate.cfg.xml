@@ -28,6 +28,7 @@
         <mapping class="fr.gauthier_matthieu.beans.Produit"/>
         <mapping class="fr.gauthier_matthieu.beans.TvaProduit"/>
         <mapping class="fr.gauthier_matthieu.beans.TypeProduit"/>
+        <mapping class="fr.gauthier_matthieu.beans.EtatCommande"/>
         
         
     </session-factory>

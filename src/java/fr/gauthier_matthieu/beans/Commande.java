@@ -33,11 +33,11 @@ public class Commande implements Serializable{
     @Column( name="dateLivraisonCommande")
     private LocalDateTime dateLivraisonCommande;
     
-    @Column( name="etatCommande")
-    private String etatCommande; 
+    @ManyToOne @JoinColumn(name="id_EtatCommande", unique=true)
+    private EtatCommande etatCommande; 
     
-    @OneToMany
-    private Set<LigneCommande> ligneCommande = new HashSet<>();
+    @OneToMany @JoinColumn(name="id_commandeLigneCommande")
+    private Set<LigneCommande> ligneCommande ;
     
     @ManyToOne @JoinColumn(name="idFournisseur", unique=true)
     private Fournisseur fournisseur;

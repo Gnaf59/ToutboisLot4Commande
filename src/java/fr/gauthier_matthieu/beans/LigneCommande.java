@@ -22,6 +22,11 @@ public class LigneCommande implements Serializable {
     @JoinColumn(name = "codeProduitLigneCommande")
     private Produit produit;
     
+    @Id
+    @ManyToOne
+    @JoinColumn(name="id_commandeLigneCommande")
+    private Commande commande;
+    
     @Column( name="quantite")
     private int quantite;
 

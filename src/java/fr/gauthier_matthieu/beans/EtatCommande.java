@@ -8,27 +8,19 @@ package fr.gauthier_matthieu.beans;
 import java.io.Serializable;
 import javax.persistence.*;
 
-
 /**
  *
  * @author gauthier
  */
-
 @Entity
-@Table (name="tva")
-public class TvaProduit implements Serializable {
+@Table (name="etatcommande")
+public class EtatCommande implements Serializable {
     
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column( name="id_TVA")
-    private int id_TVA;
+    @Column( name="id_EtatCommande")
+    private int idEtatCommande;
     
-    @Column( name="tauxTVA")
-    private double tauxTVA;
-
-    public double getTauxTVA() {
-        return tauxTVA;
-    }
-    
-    
+    @Column(name="libelle_EtatCommande")
+    private String libelleEtatCommande;
 }

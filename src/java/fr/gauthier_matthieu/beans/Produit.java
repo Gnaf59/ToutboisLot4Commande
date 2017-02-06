@@ -6,6 +6,7 @@
 package fr.gauthier_matthieu.beans;
 
 import java.io.Serializable;
+import java.util.Set;
 import javax.persistence.*;
 
 /**
@@ -39,6 +40,9 @@ public class Produit implements Serializable {
     
     @Column( name="Image")
     private String lienImageProduit;
+    
+    @OneToMany(mappedBy = "produit")
+    private Set<LigneCommande> ligneCommande;
     
     @ManyToOne
     @JoinColumn(name = "id_TVA")
