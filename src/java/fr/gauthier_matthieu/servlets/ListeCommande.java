@@ -8,13 +8,13 @@ package fr.gauthier_matthieu.servlets;
 import fr.gauthier_matthieu.DAO.CommandeDAO;
 import fr.gauthier_matthieu.DAO.DaoFactory;
 import fr.gauthier_matthieu.beans.Commande;
-import fr.gauthier_matthieu.beans.Fournisseur;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -46,10 +46,21 @@ public class ListeCommande extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        List<Commande> listeCommande = commandeDAO.listeCommande();
         
-        for(Commande item : listeCommande){
-	System.out.println(item);
+        
+        HttpSession session = request.getSession();
+        
+        String identifiant = (String) session.getAttribute("login");
+        
+        if ("admin".equals(identifiant))
+        {
+            List<Commande> listeCommande = commandeDAO.listeCommande();
+            request.setAttribute("commandes", listeCommande);
+            request.getRequestDispatcher("/WEB-INF/AfficherCommande.jsp").forward(request, response);
+        }
+        else
+        {
+            request.getRequestDispatcher("/WEB-INF/Login.jsp").forward(request, response);
         }
         
         

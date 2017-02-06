@@ -23,6 +23,7 @@
         <jsp-property-group>
             <display-name>Header_Footer</display-name>
             <url-pattern>/WEB-INF/Accueil.jsp</url-pattern>
+            <url-pattern>/WEB-INF/AfficherCommande.jsp</url-pattern>
             <include-prelude>/WEB-INF/Head.jsp</include-prelude>
             <include-coda>/WEB-INF/Footer.jsp</include-coda>
         </jsp-property-group>

@@ -6,8 +6,6 @@
 package fr.gauthier_matthieu.DAO;
 
 import fr.gauthier_matthieu.beans.Commande;
-import fr.gauthier_matthieu.beans.Fournisseur;
-import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -40,7 +38,7 @@ public class CommandeDAOimpl implements CommandeDAO{
         
             tx=session.beginTransaction();
         
-            resultat=session.createQuery("from Commande").list();
+            resultat=session.createQuery("from Commande WHERE idFournisseur IS NOT NULL").list();
         
             tx.commit();
         }

@@ -23,4 +23,22 @@ public class EtatCommande implements Serializable {
     
     @Column(name="libelle_EtatCommande")
     private String libelleEtatCommande;
+
+    public int getIdEtatCommande() {
+        return idEtatCommande;
+    }
+
+    public void setIdEtatCommande(int idEtatCommande) {
+        this.idEtatCommande = idEtatCommande;
+    }
+
+    public String getLibelleEtatCommande() {
+        return libelleEtatCommande;
+    }
+
+    public void setLibelleEtatCommande(String libelleEtatCommande) {
+        this.libelleEtatCommande = libelleEtatCommande;
+    }
+    
+    
 }

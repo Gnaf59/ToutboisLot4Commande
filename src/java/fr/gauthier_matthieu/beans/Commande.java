@@ -8,7 +8,6 @@ package fr.gauthier_matthieu.beans;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.*;
 
@@ -75,7 +74,42 @@ public class Commande implements Serializable{
         }
         return dateFormatted;
     }
+
+    public int getId_commande() {
+        return id_commande;
+    }
+
+    public void setId_commande(int id_commande) {
+        this.id_commande = id_commande;
+    }
+
+
+    public EtatCommande getEtatCommande() {
+        return etatCommande;
+    }
+
+    public void setEtatCommande(EtatCommande etatCommande) {
+        this.etatCommande = etatCommande;
+    }
+
+    public Set<LigneCommande> getLigneCommande() {
+        return ligneCommande;
+    }
+
+    public void setLigneCommande(Set<LigneCommande> ligneCommande) {
+        this.ligneCommande = ligneCommande;
+    }
+
+    public Fournisseur getFournisseur() {
+        return fournisseur;
+    }
+
+    public void setFournisseur(Fournisseur fournisseur) {
+        this.fournisseur = fournisseur;
+    }
  
+    
+    
     @Override
     public String toString()
     {
