@@ -49,7 +49,7 @@ public class ListeCommande extends HttpServlet {
         List<Commande> listeCommande = commandeDAO.listeCommande();
         
         for(Commande item : listeCommande){
-	System.out.println(item.toString());
+	System.out.println(item);
         }
         
         

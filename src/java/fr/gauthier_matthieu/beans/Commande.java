@@ -75,5 +75,10 @@ public class Commande implements Serializable{
         }
         return dateFormatted;
     }
-    
+ 
+    @Override
+    public String toString()
+    {
+        return id_commande+" "+getDateCommandeString();
+    }
 }

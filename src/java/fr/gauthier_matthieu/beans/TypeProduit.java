@@ -25,8 +25,5 @@ public class TypeProduit implements Serializable {
     @Column( name="libelleTypeProduit")
     private String libelleTypeProduit;
 
-    public String getLibelleTypeProduit() {
-        return libelleTypeProduit;
-    }
     
 }
