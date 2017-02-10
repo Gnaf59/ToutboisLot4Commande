@@ -46,7 +46,6 @@ public class CommandeDAOimpl implements CommandeDAO{
         {
             tx.rollback();
             ex.printStackTrace();
-            System.out.println(ex);
             System.out.println("fr.gauthier_matthieu.DAO.CommandeDAOimpl.listeCommande()");
         }
         finally
